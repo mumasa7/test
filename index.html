@@ -1,69 +1,154 @@
 <!doctype html>
 <html lang="id">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Buku — Lorem Ipsum (Contoh Layout)</title>
+
+  <!-- Open Graph tags untuk LinkedIn/FB -->
+  <meta property="og:title" content="Contoh Tampilan Buku — Layout HTML + CSS dengan Gambar & Chart">
+  <meta property="og:description"
+    content="Demo layout buku interaktif dengan HTML, CSS, gambar, dan chart. Klik untuk melihat versi penuh.">
+  <meta property="og:image" content="https://mumasa7.github.io/test/preview.png">
+  <meta property="og:url" content="https://mumasa7.github.io/test/">
+  <meta property="og:type" content="website">
+
+  <!-- Optional: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contoh Tampilan Buku — Layout HTML + CSS dengan Gambar & Chart">
+  <meta name="twitter:description" content="Demo layout buku interaktif dengan HTML, CSS, gambar, dan chart.">
+  <meta name="twitter:image" content="https://mumasa7.github.io/test/preview.png">
+
   <style>
-    :root{
-      --paper:#fbf9f3;
-      --text:#222;
-      --accent:#6b4f9a;
-      --muted:#666;
+    :root {
+      --paper: #fbf9f3;
+      --text: #222;
+      --accent: #6b4f9a;
+      --muted: #666;
       font-family: 'Georgia', serif;
     }
-    body{
-      background:linear-gradient(180deg,#e9e6dd 0%, #f7f5f0 100%);
-      padding:40px;
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
+
+    body {
+      background: linear-gradient(180deg, #e9e6dd 0%, #f7f5f0 100%);
+      padding: 40px;
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
     }
-    .center{max-width:1100px;margin:0 auto}
-    h1,h2{font-family: 'Palatino Linotype', 'Book Antiqua', serif;}
+
+    .center {
+      max-width: 1100px;
+      margin: 0 auto
+    }
+
+    h1,
+    h2 {
+      font-family: 'Palatino Linotype', 'Book Antiqua', serif;
+    }
 
     /* Book frame */
-    .book{
-      display:grid;
+    .book {
+      display: grid;
       grid-template-columns: 1fr 1fr;
-      gap:28px;
-      background:transparent;
+      gap: 28px;
     }
-    .page{
-      background:var(--paper);
-      padding:36px 40px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.12);
-      border-radius:10px;
-      min-height:560px;
-      position:relative;
-      overflow:auto;
+
+    .page {
+      background: var(--paper);
+      padding: 36px 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      border-radius: 10px;
+      min-height: 560px;
+      position: relative;
+      overflow: auto;
     }
-    .page .header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
-    .title{font-size:20px;color:var(--accent);letter-spacing:0.6px}
-    .meta{font-size:12px;color:var(--muted)}
-    .chapter-title{font-size:18px;margin:14px 0 8px}
-    p{line-height:1.65;margin:0 0 12px;text-align:justify}
 
-    /* decorative image */
-    .media{display:flex;gap:12px;align-items:flex-start;margin:12px 0}
-    .media img{max-width:100%;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+    .page .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px
+    }
 
-    /* chart container */
-    .chart-wrap{margin-top:18px;padding:12px;background:linear-gradient(180deg,#fff 0,#f9f9f9 100%);border-radius:8px}
+    .title {
+      font-size: 20px;
+      color: var(--accent);
+      letter-spacing: 0.6px
+    }
 
-    /* small footer */
-    .page-footer{position:absolute;bottom:12px;left:40px;right:40px;font-size:11px;color:var(--muted);display:flex;justify-content:space-between}
+    .meta {
+      font-size: 12px;
+      color: var(--muted)
+    }
 
-    /* responsive to single column on small screens */
-    @media (max-width:900px){
-      .book{grid-template-columns:1fr}
-      body{padding:18px}
-      .page{min-height:480px}
+    .chapter-title {
+      font-size: 18px;
+      margin: 14px 0 8px
+    }
+
+    p {
+      line-height: 1.65;
+      margin: 0 0 12px;
+      text-align: justify
+    }
+
+    /* image */
+    .media {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin: 12px 0
+    }
+
+    .media img {
+      max-width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08)
+    }
+
+    /* chart */
+    .chart-wrap {
+      margin-top: 18px;
+      padding: 12px;
+      background: linear-gradient(180deg, #fff 0, #f9f9f9 100%);
+      border-radius: 8px
+    }
+
+    /* footer */
+    .page-footer {
+      position: absolute;
+      bottom: 12px;
+      left: 40px;
+      right: 40px;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between
+    }
+
+    /* responsive */
+    @media (max-width:900px) {
+      .book {
+        grid-template-columns: 1fr
+      }
+
+      body {
+        padding: 18px
+      }
+
+      .page {
+        min-height: 480px
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="center">
-    <h1 style="text-align:center;margin-bottom:18px">Contoh Tampilan Buku — <small style="font-size:14px;color:var(--muted);display:block">Layout HTML + CSS dengan gambar & chart</small></h1>
+    <h1 style="text-align:center;margin-bottom:18px">
+      Contoh Tampilan Buku
+      <small style="font-size:14px;color:var(--muted);display:block">Layout HTML + CSS dengan gambar & chart</small>
+    </h1>
 
     <div class="book" role="document" aria-label="Buku contoh">
 
@@ -78,11 +163,12 @@
         </div>
 
         <h2 class="chapter-title">What is Lorem Ipsum?</h2>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since the 1500s...</p>
+        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
+          unchanged...</p>
 
         <div class="media">
-          <!-- Inline SVG sample image -->
           <svg width="220" height="140" viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
               <linearGradient id="g1" x1="0" x2="1">
@@ -99,8 +185,8 @@
           </svg>
 
           <div style="flex:1">
-            <p style="margin-top:0"><strong>Catatan:</strong> Gambar ini hanya contoh dekoratif, bisa diganti dengan foto atau ilustrasi lain sesuai kebutuhan.</p>
-            <p style="font-size:13px;color:var(--muted)">Tip: untuk mengganti gambar, pakai elemen &lt;img src="..."&gt; atau inline SVG seperti di atas.</p>
+            <p style="margin-top:0"><strong>Catatan:</strong> Gambar ini contoh dekoratif, bisa diganti dengan
+              foto/ilustrasi lain.</p>
           </div>
         </div>
 
@@ -121,10 +207,11 @@
         </div>
 
         <h2 class="chapter-title">Why do we use it?</h2>
-        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+        <p>It is a long established fact that a reader will be distracted by the readable content...</p>
 
         <h2 class="chapter-title">Where does it come from?</h2>
-        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
+          literature from 45 BC...</p>
 
         <div class="chart-wrap">
           <canvas id="sampleChart" width="400" height="200" aria-label="Contoh chart" role="img"></canvas>
@@ -132,7 +219,8 @@
 
         <div style="margin-top:10px">
           <h3 style="font-size:14px;margin:8px 0 4px">Where can I get some?</h3>
-          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+            alteration...</p>
         </div>
 
         <div class="page-footer">
@@ -142,15 +230,12 @@
       </article>
 
     </div>
-
-    <p style="text-align:center;margin-top:18px;color:var(--muted)">Tekan <code>Ctrl/Cmd + P</code> untuk mencetak, atau buka file ini di browser untuk melihat versi penuh.</p>
   </div>
 
-  <!-- Chart.js dari CDN (jsDelivr) -->
+  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script>
-    // Data contoh untuk chart — distribusi kata Lorem Ipsum per 'bagian'
-    const labels = ['Sejarah','Alasan','Asal','Sumber','Variasi'];
+    const labels = ['Sejarah', 'Alasan', 'Asal', 'Sumber', 'Variasi'];
     const data = {
       labels: labels,
       datasets: [{
@@ -158,26 +243,16 @@
         data: [3, 2, 2, 1, 2],
         tension: 0.4,
         fill: true,
+        borderColor: '#6b4f9a',
+        backgroundColor: 'rgba(107,79,154,0.2)'
       }]
     };
-
-    const config = {
+    new Chart(document.getElementById('sampleChart'), {
       type: 'line',
       data: data,
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins:{
-          legend:{display:true,position:'top'}
-        },
-        scales:{
-          y:{beginAtZero:true, ticks:{precision:0}}
-        }
-      }
-    };
-
-    const ctx = document.getElementById('sampleChart');
-    new Chart(ctx, config);
+      options: { responsive: true, maintainAspectRatio: false }
+    });
   </script>
 </body>
+
 </html>
